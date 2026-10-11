@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>2026-10-15 story</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;500&display=block" rel="stylesheet">
+<style>
+  /* Yön A · Etiket — gorsel-yon.md. Story güvenli alanı: yazı y = 250…1580. */
+  :root {
+    --kagit: #FAF7F2;
+    --yulaf: #EDE3D6;
+    --murekkep: #1F1B17;
+    --kursun: #6B645B;
+    --kenar: 60px;
+    --ust: 250px;
+    --alt: 340px;
+  }
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--kagit); }
+  .tuval { position: relative; width: 1080px; height: 1920px; color: var(--murekkep); }
+  .tuval > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+  .yazi { position: absolute; top: calc(var(--ust) + 14px); left: var(--kenar); right: var(--kenar); }
+  .etiket {
+    font: 400 28px/1 "IBM Plex Mono", monospace;
+    color: var(--murekkep); /* Kurşun fotoğraf zemininde 4,3–4,5:1 kalıyordu (M2 denetimi) */
+    padding-bottom: 16px;
+    border-bottom: 1.5px solid var(--kursun);
+    display: flex; justify-content: space-between;
+  }
+  .adim { margin-top: 26px; display: flex; align-items: flex-start; gap: 28px; }
+  .no {
+    font-family: "Fraunces", serif; font-optical-sizing: auto; font-weight: 400;
+    font-size: 132px; line-height: .82; letter-spacing: -0.02em;
+  }
+  .cumle { padding-top: 4px; }
+  .cumle h1 {
+    font-family: "Fraunces", serif; font-optical-sizing: auto; font-weight: 400;
+    font-size: 56px; line-height: 1.08; letter-spacing: -0.005em;
+  }
+  .cumle .urun { margin-top: 10px; font: 400 28px/1.2 "IBM Plex Mono", monospace; color: var(--murekkep); }
+  .terim { margin-top: 26px; display: inline-block; background: var(--yulaf); padding: 12px 16px 14px; }
+  .terim .ad { font: 400 28px/1.25 "IBM Plex Mono", monospace; }
+  .terim .tr { font: 400 34px/1.25 "IBM Plex Sans", sans-serif; }
+
+  /* Kontrol katmanı */
+  .bant, .cikartma { position: absolute; left: 0; right: 0; display: none; }
+  .bant { background: rgba(255, 0, 0, .35); }
+  .bant.ust { top: 0; height: var(--ust); }
+  .bant.alt { bottom: 0; height: var(--alt); }
+  .cikartma {
+    left: 240px; right: 240px; top: 1380px; height: 180px;
+    border: 4px dashed #E00000;
+    font: 500 26px/1 "IBM Plex Mono", monospace; color: #E00000;
+    align-items: center; justify-content: center;
+  }
+  .kontrol .bant { display: block; }
+  .kontrol.k3 .cikartma { display: flex; }
+</style>
+</head>
+<body>
+<div class="tuval" id="tuval">
+  <img id="gorsel" alt="">
+  <div class="yazi">
+    <p class="etiket"><span>Akşam rutini</span><span id="sira"></span></p>
+    <div class="adim">
+      <span class="no" id="no"></span>
+      <div class="cumle">
+        <h1 id="cumle"></h1>
+        <p class="urun" id="urun"></p>
+      </div>
+    </div>
+    <div class="terim"><p class="ad" id="ad"></p><p class="tr" id="tr"></p></div>
+  </div>
+  <div class="bant ust"></div>
+  <div class="bant alt"></div>
+  <div class="cikartma">bağlantı çıkartması</div>
+</div>
+<script>
+  // Cümleler takvim.csv 2026-10-15 satırından; içerik satırları marka-brief.md içerik tablosundan.
+  const kareler = {
+    1: { cumle: 'Nemli yüze fındık kadar.', urun: 'Temizleme Jeli · 150 ml',
+         ad: 'Avena Sativa Kernel Extract', tr: 'Yulaf özü. Yulaf tanesinden elde ediliyor.' },
+    2: { cumle: '3-4 damla.', urun: 'Niasinamid Serumu · 30 ml',
+         ad: 'Niacinamide', tr: 'Niasinamid. B3 vitamininin bir formu.' },
+    3: { cumle: 'Bir pompa.', urun: 'Seramid Krem · 50 ml',
+         ad: 'Ceramide NP, Ceramide AP, Ceramide EOP', tr: 'Seramidler. Cildin dış katmanında da bulunan yağ molekülleri.' },
+  };
+  const [n, kip] = (location.hash.slice(1) || '1').split('-');
+  const k = kareler[n];
+  document.getElementById('gorsel').src = `2026-10-15-story-${n}-gorsel.png`;
+  document.getElementById('sira').textContent = `${n}/3`;
+  document.getElementById('no').textContent = `0${n}`;
+  for (const id of ['cumle', 'urun', 'ad', 'tr']) document.getElementById(id).textContent = k[id];
+  const t = document.getElementById('tuval');
+  t.classList.add(`k${n}`);
+  if (kip === 'kontrol') t.classList.add('kontrol');
+</script>
+</body>
+</html>

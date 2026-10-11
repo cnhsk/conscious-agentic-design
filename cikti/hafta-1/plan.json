@@ -1,0 +1,133 @@
+{
+  "kosu": "hafta-1",
+  "isler": [
+    {
+      "tarih": "2026-10-13",
+      "kareler": [
+        {
+          "gorsel": "cikti/ham/2026-10-13-hafta1-gorsel.jpeg",
+          "wiro_gorev": "4086023",
+          "odak": "50% 50%",
+          "etiket": "Rutin Seti",
+          "baslik": "Conscious\nbugün açıldı.",
+          "metin": "Üç ürün, bir rutin.\nRutin Seti lansman fiyatıyla **1.390 TL**.",
+          "cta": "Bio'daki bağlantıdan siteye git"
+        }
+      ]
+    },
+    {
+      "tarih": "2026-10-14",
+      "kareler": [
+        {
+          "gorsel": "cikti/sosyal/2026-10-14-gorsel-nanobanana-2.png",
+          "etiket": "Rutin Seti · 01 + 02 + 03",
+          "baslik": "Önce 01, sonra 02,\nsonra 03.",
+          "metin": "Sıra her şişenin üstünde yazıyor.",
+          "cta": "Seti sitede incele"
+        }
+      ]
+    },
+    {
+      "tarih": "2026-10-15",
+      "kareler": [
+        {
+          "gorsel": "cikti/sosyal/2026-10-15-story-1-gorsel.png",
+          "etiket": "Akşam rutini",
+          "no": "01",
+          "baslik": "Nemli yüze fındık kadar.",
+          "terim": { "ad": "Avena Sativa Kernel Extract", "tr": "Yulaf özü. Yulaf tanesinden elde ediliyor." }
+        },
+        {
+          "gorsel": "cikti/sosyal/2026-10-15-story-2-gorsel.png",
+          "etiket": "Akşam rutini",
+          "no": "02",
+          "baslik": "3-4 damla.",
+          "terim": { "ad": "Niacinamide", "tr": "Niasinamid. B3 vitamininin bir formu." }
+        },
+        {
+          "gorsel": "cikti/sosyal/2026-10-15-story-3-gorsel.png",
+          "etiket": "Akşam rutini",
+          "no": "03",
+          "baslik": "Bir pompa.",
+          "terim": { "ad": "Ceramide NP, Ceramide AP, Ceramide EOP", "tr": "Seramidler. Cildin dış katmanında da bulunan yağ molekülleri." }
+        }
+      ]
+    },
+    {
+      "tarih": "2026-10-16",
+      "video": "cikti/hareket/2026-10-16-video.mp4"
+    },
+    {
+      "tarih": "2026-10-17",
+      "kareler": [
+        {
+          "gorsel": "cikti/ham/2026-10-17-hafta1-gorsel.jpeg",
+          "wiro_gorev": "4086052",
+          "etiket": "Etiketi okuyalım · 02 Niasinamid Serumu",
+          "baslik": "Arka yüzdeki üç içerik ve Türkçesi",
+          "metin": "niasinamid, pantenol, sodyum hiyalüronat."
+        },
+        {
+          "gorsel": "cikti/ham/2026-10-17-hafta1-gorsel.jpeg",
+          "wiro_gorev": "4086052",
+          "etiket": "Etiketi okuyalım",
+          "baslik": "Niasinamid.",
+          "terim": { "ad": "Niacinamide", "tr": "B3 vitamininin bir formu." }
+        },
+        {
+          "gorsel": "cikti/ham/2026-10-17-hafta1-gorsel.jpeg",
+          "wiro_gorev": "4086052",
+          "etiket": "Etiketi okuyalım",
+          "baslik": "Pantenol.",
+          "terim": { "ad": "Panthenol", "tr": "B5 provitamini." }
+        },
+        {
+          "gorsel": "cikti/ham/2026-10-17-hafta1-gorsel.jpeg",
+          "wiro_gorev": "4086052",
+          "etiket": "Etiketi okuyalım",
+          "baslik": "Sodyum hiyalüronat.",
+          "terim": { "ad": "Sodium Hyaluronate", "tr": "Hiyalüronik asidin tuzu, su tutan bir molekül." },
+          "cta": "Kaydet."
+        }
+      ]
+    },
+    {
+      "tarih": "2026-10-18",
+      "kareler": [
+        {
+          "gorsel": "cikti/sosyal/2026-10-18-kapak-gorsel.png",
+          "etiket": "Nil Aydemir · kurucu",
+          "baslik": "Neden\nüç ürün?",
+          "metin": "Kurucu, banyosundaki on bir ürünü neden üçe indirdiğini anlatıyor."
+        }
+      ]
+    },
+    {
+      "tarih": "2026-10-19",
+      "kareler": [
+        {
+          "gorsel": "cikti/ham/2026-10-09-site-giris.jpeg",
+          "etiket": "Lansman fiyatının son günü",
+          "baslik": "Rutin Seti'nin lansman fiyatı **1.390 TL**,",
+          "metin": "bu gece 23.59'da bitiyor."
+        },
+        {
+          "gorsel": "cikti/ham/2026-10-09-site-giris.jpeg",
+          "etiket": "Lansman fiyatının son günü",
+          "baslik": "Bu gece 23.59'da bitiyor.",
+          "metin": "Kargo: 13-19 Ekim arasında bütün siparişlerde ücretsiz.",
+          "terim": { "ad": "Glycerin", "tr": "Gliserin. Suyu kendine çeken, nem tutucu bir bileşen." }
+        }
+      ]
+    }
+  ],
+  "eksikler": [
+    "2026-10-17 · post: takvim CTA'sının ikinci cümlesi \"İçerik listesinin tamamı ürün sayfasında\" basılmadı; kitte tam liste yok, ürün sayfası yalnız dokuz satır gösteriyor (degerlendirme.md, Selin #2).",
+    "2026-10-16 · video: Reels açıklaması bu koşunun dışında; DESIGN.md §5 terim satırı açıklamada olmalı, henüz yazılmadı.",
+    "2026-10-13, 2026-10-14, 2026-10-18: terim satırı görselde yok; mevcut açıklamalarda var (cikti/hareket/2026-10-13-aciklama.md, cikti/sosyal/aciklama.md, cikti/sosyal/2026-10-18-aciklama.md)."
+  ],
+  "selin": [
+    "Üç ürünün tam içerik listesi ve her içeriğin Türkçe satırı (17 Ekim kaydırmalı post CTA'sı \"İçerik listesinin tamamı ürün sayfasında\" diyor; degerlendirme.md #2).",
+    "\"Cildim kolay kızarıyor, kullanabilir miyim?\" sorusuna onaylı cevap (ürün sayfası Sorular; degerlendirme.md #1)."
+  ]
+}

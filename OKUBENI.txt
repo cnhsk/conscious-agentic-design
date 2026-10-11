@@ -1,0 +1,25 @@
+Conscious · marka kiti
+
+Kurgusal marka, eğitim amaçlı. Conscious gerçek bir marka değildir.
+
+Conscious yeni bir cilt bakım markası. 13 Ekim 2026 Salı günü üç ürünle
+satışa çıkıyor. Lansman haftasının (13-19 Ekim) tasarım ve içerik işi sende.
+
+Günün işi:
+  1. Markanın arketipini seç, görsel dilini kur.
+  2. Lansman haftası için post, story ve kapak görseli üret.
+  3. Animasyonlu postu ve kısa videoyu üret.
+  4. Ürün sayfasını kur, Vercel'de yayına al.
+  5. Haftanın yedi içeriğini içerik fabrikasından geçir.
+
+Bu klasörde:
+  marka-brief.md          Conscious kim: hikâye, ürünler, kitle, rakipler,
+                          ses ve ton, iki arketip adayı
+  lansman-haftasi.md      13-19 Ekim: tarihler, teklif, yedi günlük takvim
+  takvim.csv              Aynı takvim, içerik fabrikası için
+  gorsel-yon.md           Üç görsel yön, paletler, yazı tipleri, ambalaj,
+                          formatlar ve güvenli alanlar
+  urun-sayfasi-brief.md   Ürün sayfasının bölümleri ve kısıtları
+  marka-kiti.html         Tek sayfalık görsel özet (PDF'i de var)
+
+Vibe Designing Bootcamp · Komünite · 9 Ekim 2026

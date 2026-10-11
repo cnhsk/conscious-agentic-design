@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-10-13 animasyonlu post</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;500&display=block" rel="stylesheet">
+<style>
+  /*
+    2026-10-13 · Salı 10.00 · animasyonlu post · 1080×1350 · 6 sn döngü
+    Bilge · Yön A · Etiket. Hareket (gorsel-yon.md): satırlar sırayla gelir, ölçü çizgisi çizilir, numara değişir.
+    İlk karede başlık ve fiyat sabit ve okunur; hareket yalnız ikincil öğelerde. Animasyon yalnız CSS @keyframes.
+    Bütün ölçüler 1080 px'lik tuvale göre: calc(N * var(--px)). Sahne pencereye sığar, 1080×1350'de piksel piksel aynıdır.
+  */
+  :root {
+    --kagit: #FAF7F2;
+    --yulaf: #EDE3D6;
+    --murekkep: #1F1B17;
+    --muhur: #2F4A3A;
+    --kursun: #6B645B;
+    --sure: 6s;
+  }
+  * { margin: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    background: #2A2621;
+    display: grid; place-items: center;
+    overflow: hidden;
+  }
+  .sahne {
+    position: relative;
+    width: min(100vw, calc(100vh * 1080 / 1350));
+    aspect-ratio: 1080 / 1350;
+    container-type: inline-size;
+    overflow: hidden;
+    background: var(--kagit);
+    color: var(--murekkep);
+  }
+  .sahne > * { --px: calc(100cqw / 1080); }
+  .zemin { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+  /* Üst blok — sabit */
+  .ust { position: absolute; top: calc(60 * var(--px)); left: calc(60 * var(--px)); right: calc(60 * var(--px)); }
+  .satir { display: flex; justify-content: space-between; align-items: baseline; }
+  .imza { font: 400 calc(40 * var(--px))/1 "Fraunces", serif; letter-spacing: -0.01em; }
+  .tarih { font: 400 calc(28 * var(--px))/1 "IBM Plex Mono", monospace; }
+  .cizgi {
+    height: calc(1.5 * var(--px)); background: var(--kursun);
+    margin-top: calc(18 * var(--px));
+    transform-origin: left center;
+    animation: ciz var(--sure) cubic-bezier(.6, 0, .2, 1) infinite both;
+  }
+  h1 {
+    margin-top: calc(24 * var(--px));
+    font-family: "Fraunces", serif; font-optical-sizing: auto; font-weight: 400;
+    font-size: calc(96 * var(--px)); line-height: 1; letter-spacing: -0.015em;
+  }
+  .alt-baslik { margin-top: calc(18 * var(--px)); font: 400 calc(40 * var(--px))/1.2 "IBM Plex Sans", sans-serif; }
+
+  /* Sağ sütun — numara değişir, ölçü çizgisi iner */
+  .olcu {
+    position: absolute; left: calc(782 * var(--px)); top: calc(500 * var(--px));
+    width: calc(1.5 * var(--px)); height: calc(520 * var(--px));
+    background: var(--kursun);
+    transform-origin: top center;
+    animation: in var(--sure) cubic-bezier(.6, 0, .2, 1) infinite both;
+  }
+  .sayac { position: absolute; left: calc(808 * var(--px)); top: calc(500 * var(--px)); width: calc(212 * var(--px)); }
+  .sayac > div { position: absolute; top: 0; left: 0; right: 0; opacity: 0; animation: sira var(--sure) ease-in-out infinite both; }
+  .sayac > div:nth-child(1) { opacity: 1; animation-delay: 0s; }
+  .sayac > div:nth-child(2) { animation-delay: -4s; }
+  .sayac > div:nth-child(3) { animation-delay: -2s; }
+  .no {
+    display: block;
+    font-family: "Fraunces", serif; font-optical-sizing: auto; font-weight: 400;
+    font-size: calc(150 * var(--px)); line-height: .85; letter-spacing: -0.02em;
+  }
+  .ad { display: block; margin-top: calc(18 * var(--px)); font: 400 calc(28 * var(--px))/1.3 "IBM Plex Mono", monospace; }
+
+  /* Alt blok — fiyat sabit, CTA sonradan gelir */
+  .alt { position: absolute; left: calc(60 * var(--px)); right: calc(60 * var(--px)); bottom: calc(60 * var(--px)); }
+  .fiyat { font: 400 calc(44 * var(--px))/1.2 "IBM Plex Sans", sans-serif; }
+  .fiyat b { font-weight: 500; color: var(--muhur); }
+  .cta {
+    display: inline-block; margin-top: calc(20 * var(--px));
+    background: var(--yulaf);
+    font: 400 calc(28 * var(--px))/1 "IBM Plex Mono", monospace;
+    padding: calc(16 * var(--px)) calc(20 * var(--px));
+    animation: gel var(--sure) ease-out infinite both;
+  }
+
+  /* Zaman çizelgesi (6 sn): 0–0,9 sn üst çizgi · 0,3–1,2 sn dikey çizgi · 0,9–1,5 sn CTA · numara 2 ve 4 sn'de değişir, 6 sn'de 01'e döner · 5,76–6 sn sıfırlanır */
+  @keyframes ciz {
+    0%   { transform: scaleX(0); }
+    15%  { transform: scaleX(1); }
+    96%  { transform: scaleX(1); opacity: 1; }
+    100% { transform: scaleX(1); opacity: 0; }
+  }
+  @keyframes in {
+    0%, 5% { transform: scaleY(0); }
+    20%    { transform: scaleY(1); }
+    96%    { transform: scaleY(1); opacity: 1; }
+    100%   { transform: scaleY(1); opacity: 0; }
+  }
+  @keyframes gel {
+    0%, 15% { opacity: 0; transform: translateY(calc(12 * var(--px))); }
+    25%     { opacity: 1; transform: none; }
+    96%     { opacity: 1; transform: none; }
+    100%    { opacity: 0; transform: none; }
+  }
+  /* Her numara 2 sn: 1,56 sn'de çıkmaya başlar, 1,74 sn'de kaybolur; sıradaki 1,82 sn'de girer. Çıkış ve giriş üst üste binmez. */
+  @keyframes sira {
+    0%   { opacity: 1; transform: none; }
+    26%  { opacity: 1; transform: none; }
+    29%  { opacity: 0; transform: translateY(calc(-10 * var(--px))); }
+    97%  { opacity: 0; transform: translateY(calc(10 * var(--px))); }
+    100% { opacity: 1; transform: none; }
+  }
+
+  /* Hareket azaltılmışsa: son, okunur hâl */
+  @media (prefers-reduced-motion: reduce) {
+    .sahne * { animation: none !important; }
+  }
+</style>
+</head>
+<body>
+<main class="sahne" aria-label="Conscious bugün açıldı. Üç ürün, bir rutin. Rutin Seti lansman fiyatıyla 1.390 TL.">
+  <img class="zemin" src="../sosyal/2026-10-14-gorsel-nanobanana-2.png" alt="">
+
+  <div class="ust">
+    <div class="satir">
+      <span class="imza">conscious</span>
+      <span class="tarih">13 Ekim 2026 · Salı</span>
+    </div>
+    <div class="cizgi"></div>
+    <h1>Conscious<br>bugün açıldı.</h1>
+    <p class="alt-baslik">Üç ürün, bir rutin.</p>
+  </div>
+
+  <div class="olcu"></div>
+  <div class="sayac" aria-hidden="true">
+    <div><span class="no">01</span><span class="ad">Temizleme<br>Jeli<br>150 ml</span></div>
+    <div><span class="no">02</span><span class="ad">Niasinamid<br>Serumu<br>30 ml</span></div>
+    <div><span class="no">03</span><span class="ad">Seramid<br>Krem<br>50 ml</span></div>
+  </div>
+
+  <div class="alt">
+    <p class="fiyat">Rutin Seti · lansman fiyatı <b>1.390 TL</b></p>
+    <p class="cta">Bio'daki bağlantıdan siteye git</p>
+  </div>
+</main>
+</body>
+</html>

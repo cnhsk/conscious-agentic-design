@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>2026-10-17-post-3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;500&display=block" rel="stylesheet">
+<style>
+  /*
+    İçerik fabrikası · POST şablonu · 1080×1350 (4:5)
+    DESIGN.md: Yön A · Etiket. Renk §2, yazı §3, kenar payı §4 (60 px), bileşenler §5.
+    Aşama sınıfı (AIDA) görsel ağırlığı belirler: asama-dikkat · asama-ilgi · asama-istek · asama-eylem.
+    "animasyonlu" sınıfı Yön A hareketini açar: ölçü çizgisi çizilir, numara değişir, satırlar sırayla gelir.
+    İlk karede başlık her zaman sabit ve okunur.
+  */
+  :root {
+    --kagit: #FAF7F2; --yulaf: #EDE3D6; --murekkep: #1F1B17; --muhur: #2F4A3A; --kursun: #6B645B;
+    --kenar: 60px; --sure: 6s;
+  }
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1350px; overflow: hidden; background: var(--kagit); }
+  .tuval { position: relative; width: 1080px; height: 1350px; overflow: hidden; color: var(--murekkep); }
+  [data-yazi]:empty { display: none; }
+
+  .foto { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
+
+  .ust { position: absolute; top: var(--kenar); left: var(--kenar); right: var(--kenar); }
+  .etiket {
+    display: flex; justify-content: space-between; gap: 24px;
+    font: 400 28px/1 "IBM Plex Mono", monospace;
+    padding-bottom: 16px; margin-bottom: 26px;
+    border-bottom: 1.5px solid var(--kursun);
+  }
+  .etiket:has([data-yazi]:empty) { display: none; }
+  h1 {
+    font-family: "Fraunces", serif; font-optical-sizing: auto; font-weight: 400;
+    font-size: 96px; line-height: 1.05; letter-spacing: -0.015em;
+  }
+  .metin { margin-top: 20px; font: 400 40px/1.25 "IBM Plex Sans", sans-serif; }
+  .metin b { font-weight: 500; color: var(--muhur); white-space: nowrap; }
+
+  /* §5 İçerik satırı: etiketteki adı (Mono) + Türkçesi (Plex Sans), Yulaf kutu */
+  .terim { display: inline-block; margin-top: 24px; padding: 12px 16px 14px; background: var(--yulaf); }
+  .terim:has(.ad:empty) { display: none; }
+  .terim .ad { font: 400 28px/1.25 "IBM Plex Mono", monospace; }
+  .terim .tr { font: 400 34px/1.25 "IBM Plex Sans", sans-serif; }
+
+  .alt { position: absolute; left: var(--kenar); right: var(--kenar); bottom: var(--kenar); display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; }
+  /* §5 Düğme dili: Yulaf zemin, Mürekkep, Mono */
+  .cta { background: var(--yulaf); font: 400 28px/1 "IBM Plex Mono", monospace; padding: 15px 20px; }
+  .imza { font: 400 44px/.8 "Fraunces", serif; letter-spacing: -0.01em; }
+
+  /* ---------- AIDA ağırlıkları ---------- */
+  /* Dikkat: fotoğraf ve iri başlık; gövde en az */
+  .asama-dikkat h1 { font-size: 120px; line-height: 1.02; }
+  .asama-dikkat .metin { font-size: 44px; }
+  /* İlgi: başlık + açıklama + içerik satırı dengede (varsayılan ölçüler) */
+  /* İstek: fotoğraf baskın, başlık küçük, tek duyusal satır */
+  .asama-istek h1 { font-size: 72px; }
+  .asama-istek .metin { font-size: 36px; }
+  /* Eylem: yazı baskın; fotoğraf sağ altta küçük bir hücrede */
+  .asama-eylem .foto { inset: auto var(--kenar) 150px auto; width: 420px; height: 420px; }
+  .asama-eylem h1 { font-size: 120px; line-height: 1.02; }
+  .asama-eylem .metin { font-size: 48px; max-width: 900px; }
+
+  /* ---------- Animasyonlu post (yalnız CSS @keyframes; araclar/mp4.mjs kare kare basar) ---------- */
+  .sayac { display: none; position: relative; min-width: 2.4em; text-align: right; }
+  .animasyonlu .sayac { display: inline-block; }
+  .sayac span { position: absolute; right: 0; top: 0; opacity: 0; }
+  .animasyonlu .sayac span { animation: sira var(--sure) ease-in-out infinite both; }
+  .animasyonlu .sayac span:nth-child(1) { animation-delay: 0s; }
+  .animasyonlu .sayac span:nth-child(2) { animation-delay: -4s; }
+  .animasyonlu .sayac span:nth-child(3) { animation-delay: -2s; }
+  .animasyonlu .etiket { border-bottom-color: transparent; position: relative; }
+  .animasyonlu .etiket::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -1.5px; height: 1.5px; background: var(--kursun);
+    transform-origin: left center; animation: ciz var(--sure) cubic-bezier(.6,0,.2,1) infinite both;
+  }
+  .animasyonlu .terim { animation: gel var(--sure) ease-out infinite both; animation-delay: 0s; }
+  .animasyonlu .cta { animation: gel2 var(--sure) ease-out infinite both; }
+  @keyframes ciz  { 0% { transform: scaleX(0); } 15% { transform: scaleX(1); } 96% { transform: scaleX(1); opacity: 1; } 100% { transform: scaleX(1); opacity: 0; } }
+  @keyframes gel  { 0%, 8% { opacity: 0; transform: translateY(12px); } 18% { opacity: 1; transform: none; } 96% { opacity: 1; } 100% { opacity: 0; } }
+  @keyframes gel2 { 0%, 15% { opacity: 0; transform: translateY(12px); } 25% { opacity: 1; transform: none; } 96% { opacity: 1; } 100% { opacity: 0; } }
+  @keyframes sira { 0% { opacity: 1; } 26% { opacity: 1; } 29% { opacity: 0; } 97% { opacity: 0; } 100% { opacity: 1; } }
+
+  /* ---------- Kontrol kopyası: adres #kontrol ile açılınca 60 px kenar bandı ---------- */
+  .kontrol { display: none; position: absolute; inset: 0; pointer-events: none;
+    border: var(--kenar) solid rgba(255, 0, 0, .35); }
+  #kontrol:target { display: block; }
+</style>
+</head>
+<body>
+<div class="tuval  asama-istek">
+  <img class="foto" src="../../ham/2026-10-17-hafta1-gorsel.jpeg" alt="">
+
+  <div class="ust">
+    <p class="etiket"><span data-yazi>Etiketi okuyalım</span><span class="sayac" aria-hidden="true"><span>01</span><span>02</span><span>03</span></span></p>
+    <h1 data-yazi>Pantenol.</h1>
+    <p class="metin" data-yazi></p>
+    <div class="terim"><p class="ad" data-yazi>Panthenol</p><p class="tr" data-yazi>B5 provitamini.</p></div>
+  </div>
+
+  <div class="alt">
+    <p class="cta" data-yazi></p>
+    <p class="imza" data-yazi>conscious</p>
+  </div>
+
+  <div class="kontrol" id="kontrol"></div>
+</div>
+</body>
+</html>

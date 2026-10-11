@@ -1,0 +1,28 @@
+# Dependencies (reinstall with: cd araclar && npm install)
+node_modules/
+
+# Secrets and deploy state — never commit
+.env
+.env.*
+.vercel/
+
+# OS / editor
+.DS_Store
+
+# Raw Wiro downloads (large; finals live elsewhere in cikti/)
+cikti/ham/
+
+# Rejected attempts and model comparisons
+*-v1.*
+*-v2.*
+*flux*
+*-post-model*
+cikti/sosyal/2026-10-14-gorsel-nanobanana.png
+cikti/sosyal/modeller.html
+
+# M1 drafts (keep bilge.png: cikti/once-sonra.html uses it)
+cikti/m1/*
+!cikti/m1/bilge.png
+
+# Temporary render files
+cikti/hafta-1/kaynak/.*

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>2026-10-14 post</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;500&display=block" rel="stylesheet">
+<style>
+  /* Yön A · Etiket — gorsel-yon.md */
+  :root {
+    --kagit: #FAF7F2;
+    --yulaf: #EDE3D6;
+    --murekkep: #1F1B17;
+    --muhur: #2F4A3A;
+    --kursun: #6B645B;
+    --kenar: 60px;
+  }
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1350px; overflow: hidden; background: var(--kagit); }
+  .tuval { position: relative; width: 1080px; height: 1350px; color: var(--murekkep); }
+  .tuval > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+  .ust { position: absolute; top: var(--kenar); left: var(--kenar); right: var(--kenar); }
+  .etiket {
+    font: 400 28px/1 "IBM Plex Mono", monospace;
+    color: var(--murekkep); /* Kurşun fotoğraf zemininde 4,4:1 kalıyordu (M2 denetimi) */
+    padding-bottom: 18px;
+    border-bottom: 1.5px solid var(--kursun);
+  }
+  h1 {
+    margin-top: 26px;
+    font-family: "Fraunces", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 96px;
+    line-height: 1;
+    letter-spacing: -0.015em;
+  }
+  .metin { margin-top: 20px; font: 400 40px/1.2 "IBM Plex Sans", sans-serif; }
+
+  .cta {
+    position: absolute; left: var(--kenar); bottom: var(--kenar);
+    background: var(--yulaf);
+    font: 400 30px/1 "IBM Plex Mono", monospace;
+    padding: 16px 22px;
+  }
+  .imza {
+    position: absolute; right: var(--kenar); bottom: var(--kenar);
+    font: 400 44px/1 "Fraunces", serif;
+    letter-spacing: -0.01em;
+  }
+</style>
+</head>
+<body>
+<div class="tuval">
+  <img src="2026-10-14-gorsel-nanobanana-2.png" alt="">
+  <div class="ust">
+    <p class="etiket">Rutin Seti · 01 + 02 + 03</p>
+    <h1>Önce 01, sonra 02,<br>sonra 03.</h1>
+    <p class="metin">Sıra her şişenin üstünde yazıyor.</p>
+  </div>
+  <p class="cta">Seti sitede incele</p>
+  <p class="imza">conscious</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+gorev: 4082985
+tasktoken: [kaldırıldı — görev teslim alındı]
+model: klingai/kling-v3
+gonderim: 2026-10-09, beklemesiz (wait=false), run_model bir kez çağrıldı
+is: 2026-10-16 Reels · dokular yakın planda · seçilen doku: damla (02 Niasinamid Serumu)
+ayarlar: mode std · duration 5 · ratio 9:16 · sound off · multiShot false
+baslangic_gorseli: görev 4082461 (2026-10-15 story 2 görseli), Wiro adresi gönderim anında açıktı
+durum: teslim alındı (wait_for_task), 88 sn sürdü, maliyet 0,42 $ (get_task_price), harcama satırı eklendi
+ham: cikti/ham/2026-10-16-video-ham.mp4 (716×1284, 5,04 sn, 24 fps, ses yok)
+teslim: cikti/hareket/2026-10-16-video.mp4 (1080×1920, ölçeklenip kırpıldı, ses yok)
+
+Teslim alırken: run_model'i yeniden çağırma.
+  1. wait_for_task (tasktoken yukarıda) ile bekle
+  2. çıktıyı hemen cikti/ham/2026-10-16-video-ham.mp4 olarak indir
+  3. get_task_price ile maliyeti al, cikti/wiro-harcama.csv'ye satır ekle

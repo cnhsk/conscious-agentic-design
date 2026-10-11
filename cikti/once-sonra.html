@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>13 Ekim Önce Sonra</title>
+<style>
+  :root {
+    --bg: #FAF7F2; --surface: #FFFFFF; --ink: #1F1B17; --muted: #6B645B; --line: #E2DAD0;
+    --ok: #2F4A3A; --bad: #8F3A2A; --kismi: #7A5A12;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg: #171512; --surface: #201D19; --ink: #EDE3D6; --muted: #A39A8E; --line: #36312B; --ok: #8DB89B; --bad: #E39A86; --kismi: #D9B66A; }
+  }
+  :root[data-theme="dark"] { --bg: #171512; --surface: #201D19; --ink: #EDE3D6; --muted: #A39A8E; --line: #36312B; --ok: #8DB89B; --bad: #E39A86; --kismi: #D9B66A; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  header, main { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+  header { padding-top: 32px; }
+  h1 { font-size: 22px; font-weight: 600; margin: 0 0 4px; }
+  header p { margin: 0; color: var(--muted); }
+  .ikili { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; padding: 24px 0 8px; }
+  @media (max-width: 720px) { .ikili { grid-template-columns: 1fr; } }
+  figure { margin: 0; }
+  figure img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; border: 1px solid var(--line); border-radius: 6px; background: var(--line); }
+  figcaption { margin-top: 8px; font-size: 14px; }
+  figcaption b { font-weight: 600; }
+  .mono { font: 12px/1.4 ui-monospace, "SF Mono", Menlo, monospace; color: var(--muted); display: block; }
+  h2 { font-size: 17px; margin: 32px 0 4px; }
+  .not { color: var(--muted); margin: 0 0 12px; }
+  .kaydir { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; background: var(--surface); }
+  th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  th { font-size: 12px; text-transform: none; color: var(--muted); font-weight: 600; }
+  td.bolum { color: var(--muted); white-space: nowrap; font: 12px/1.5 ui-monospace, "SF Mono", Menlo, monospace; }
+  td.d { text-align: center; font-weight: 700; white-space: nowrap; width: 64px; }
+  .e { color: var(--ok); } .h { color: var(--bad); } .k { color: var(--kismi); }
+  td small { display: block; color: var(--muted); font-size: 12px; }
+  tfoot td { font-weight: 600; }
+  main { padding-bottom: 48px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>13 Ekim postu · önce ve sonra</h1>
+  <p>Sözleşme: DESIGN.md. Önce: sabahki <code>cikti/m1/bilge.png</code>. Sonra: <code>cikti/2026-10-13-post-sonra.png</code>.</p>
+</header>
+<main>
+  <div class="ikili">
+    <figure>
+      <img src="m1/bilge.png" alt="Önce: yazıları model tarafından çizilmiş, ızgaralı 13 Ekim postu">
+      <figcaption><b>Önce</b> · sabah, M1<span class="mono">nano-banana-2 1K · yazıyı model çizdi · görev 4081479</span></figcaption>
+    </figure>
+    <figure>
+      <img src="2026-10-13-post-sonra.png" alt="Sonra: yazısız fotoğraf üstünde HTML katmanı, üç hücreli ızgara">
+      <figcaption><b>Sonra</b> · DESIGN.md'ye göre<span class="mono">nano-banana-2 2K yazısız görsel (görev 4084825) + HTML katmanı, araclar/png.mjs</span></figcaption>
+    </figure>
+  </div>
+
+  <h2>DESIGN.md kuralları</h2>
+  <p class="not">✓ uyuyor · ✗ uymuyor. Ölçülebilen her şey ölçüldü; ölçüm ya da kısa gerekçe kuralın altında.</p>
+  <div class="kaydir">
+  <table>
+    <thead><tr><th>§</th><th>Kural</th><th>Önce</th><th>Sonra</th></tr></thead>
+    <tbody>
+      <tr><td class="bolum">1</td><td>Arketip Bilge, görsel yön A · Etiket<small>İkisi de ızgara, sola yaslı yazı, büyük numara.</small></td><td class="d e">✓</td><td class="d e">✓</td></tr>
+
+      <tr><td class="bolum">2</td><td>Yazı renkleri Yön A paletinden<small>Önce: başlık ≈ <code>#000000</code>, Mürekkep değil. Sonra: Mürekkep <code>#1F1B17</code>, fiyat Mühür <code>#2F4A3A</code>.</small></td><td class="d h">✗</td><td class="d e">✓</td></tr>
+      <tr><td class="bolum">2</td><td>Fotoğraf üstündeki küçük yazı Mürekkep<small>Önce: model siyahı. Sonra: hücre etiketleri ve CTA Mürekkep.</small></td><td class="d h">✗</td><td class="d e">✓</td></tr>
+      <tr><td class="bolum">2</td><td>Kurşun yalnız çizgide<small>İkisinde de Kurşun yalnız ızgara çizgisi.</small></td><td class="d e">✓</td><td class="d e">✓</td></tr>
+      <tr><td class="bolum">2</td><td>Yasak renk çifti yok (normal 4,5:1, büyük 3:1)<small>Önce: siyah yazı ≈ 19:1 (M1 ölçümü). Sonra: en düşük 7,9:1 (Mühür fiyat), diğerleri 13,5–14,2:1.</small></td><td class="d e">✓</td><td class="d e">✓</td></tr>
+
+      <tr><td class="bolum">3</td><td>Gerçek Fraunces, IBM Plex Sans, IBM Plex Mono<small>Önce: modelin "benzeri", doğrulanamaz. Sonra: tarayıcı her öğenin bu üç aileyle çizildiğini raporladı, sistem yazı tipine düşen harf yok.</small></td><td class="d h">✗</td><td class="d e">✓</td></tr>
+      <tr><td class="bolum">3</td><td>Başlık 88–140 px<small>Sonra: 120 px.</small></td><td class="d e">✓</td><td class="d e">✓</td></tr>
+      <tr><td class="bolum">3</td><td>Dipnot en az 28 px<small>Önce: ambalajdaki ürün adları 12–15 px ve adlar başka yerde yok. Sonra: adlar ve ölçüler hücrelerde 28 px Mono.</small></td><td class="d h">✗</td><td class="d e">✓</td></tr>
+
+      <tr><td class="bolum">4</td><td>Kenarlardan 60 px içeride<small>Önce: modelin ızgara çizgileri kenara taşıyor, 60 px bandında 81 koyu piksel. Sonra: koyu piksel y 77–1287, x 60–1018; bantta 0.</small></td><td class="d h">✗</td><td class="d e">✓</td></tr>
+      <tr><td class="bolum">4</td><td>Sola yaslı; ürün ızgaranın bir hücresinde<small>Sonra: hücreler 60–380–700–1020, çizgiler ürünlerin arasındaki boşluğa düşüyor.</small></td><td class="d e">✓</td><td class="d e">✓</td></tr>
+
+      <tr><td class="bolum">5</td><td>Başlık takvim.csv <code>ana_mesaj</code>'dan birebir<small>"Conscious bugün açıldı." · "Üç ürün, bir rutin."</small></td><td class="d e">✓</td><td class="d e">✓</td></tr>
+      <tr><td class="bolum">5</td><td>Ürün numarasıyla; soldan sağa 01, 02, 03</td><td class="d e">✓</td><td class="d e">✓</td></tr>
+      <tr><td class="bolum">5</td><td>Terim · Türkçesi satırı (görsel ve açıklama birlikte)<small>Önce: ne görselde ne açıklamada. Sonra: <code>hareket/2026-10-13-aciklama.md</code> → Avena Sativa Kernel Extract · Yulaf özü.</small></td><td class="d h">✗</td><td class="d e">✓</td></tr>
+      <tr><td class="bolum">5</td><td>CTA: Yulaf zemin, Mürekkep, Mono, takvimdeki <code>cta</code><small>Önce: zeminsiz düz satır. Sonra: Yulaf kutu.</small></td><td class="d h">✗</td><td class="d e">✓</td></tr>
+      <tr><td class="bolum">5</td><td>Fiyat: "lansman fiyatı", 1.390 TL, Mühür, indirim oranı yok</td><td class="d e">✓</td><td class="d e">✓</td></tr>
+      <tr><td class="bolum">5</td><td>Kelime işareti küçük harf "conscious"</td><td class="d e">✓</td><td class="d e">✓</td></tr>
+
+      <tr><td class="bolum">6</td><td>Yazı modelde değil, HTML katmanında</td><td class="d h">✗</td><td class="d e">✓</td></tr>
+      <tr><td class="bolum">6</td><td>Işık düz ve net; gölge kısa ve sert<small>Önce: kısa, sert gölge. Sonra: sert ama uzun, sağdan geliyor (istem soldan istedi).</small></td><td class="d e">✓</td><td class="d h">✗</td></tr>
+      <tr><td class="bolum">6</td><td>Ambalaj tarifine birebir uyum<small>Önce: uyuyor. Sonra: 03'te pompa başı görünmüyor, kapak gibi; üç ambalajda tarifte olmayan "ml" satırı var.</small></td><td class="d e">✓</td><td class="d h">✗</td></tr>
+      <tr><td class="bolum">6</td><td>Kaçınılacaklar yok (laboratuvar, molekül, soğuk mavi, çiçek, varak, başka marka)</td><td class="d e">✓</td><td class="d e">✓</td></tr>
+
+      <tr><td class="bolum">7</td><td>Türkçe, "sen", ünlem ve emoji yok, cümleler kitte birebir</td><td class="d e">✓</td><td class="d e">✓</td></tr>
+
+      <tr><td class="bolum">8</td><td>1080×1350, 4:5<small>Önce: model 928×1152 verdi, büyütüldü. Sonra: 2K (1856×2304) küçültüldü.</small></td><td class="d e">✓</td><td class="d e">✓</td></tr>
+
+      <tr><td class="bolum">9</td><td>Ürün iddiası yok</td><td class="d e">✓</td><td class="d e">✓</td></tr>
+      <tr><td class="bolum">9</td><td>Fiyat, tarih, gün takvimle aynı<small>Önce: "13 Ekim 2026 · Salı", 1.390 TL. Sonra: 1.390 TL; tarih görselde yok.</small></td><td class="d e">✓</td><td class="d e">✓</td></tr>
+      <tr><td class="bolum">9</td><td>Bilgi ambalajın küçük yazısına taşıtılmıyor</td><td class="d h">✗</td><td class="d e">✓</td></tr>
+    </tbody>
+    <tfoot><tr><td></td><td>Toplam (25 kural)</td><td class="d">16 ✓ · 9 ✗</td><td class="d">23 ✓ · 2 ✗</td></tr></tfoot>
+  </table>
+  </div>
+</main>
+</body>
+</html>

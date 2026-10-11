@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>2026-10-13 post · sonra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;500&display=block" rel="stylesheet">
+<style>
+  /* DESIGN.md · Bilge · Yön A. Tuval 1080×1350, kenar payı 60 px. */
+  :root {
+    --kagit: #FAF7F2;
+    --yulaf: #EDE3D6;
+    --murekkep: #1F1B17;
+    --muhur: #2F4A3A;
+    --kursun: #6B645B;
+    --kenar: 60px;
+    --izgara-ust: 430px;   /* ürünlerin en üstü y ≈ 585 */
+    --izgara-alt: 1150px;  /* ürünlerin tabanı y ≈ 1120 */
+  }
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1350px; overflow: hidden; background: var(--kagit); }
+  .tuval { position: relative; width: 1080px; height: 1350px; color: var(--murekkep); }
+  .tuval > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+  /* §5 Başlık: takvim.csv 2026-10-13 ana_mesaj, Fraunces 400, sola yaslı */
+  .baslik { position: absolute; top: var(--kenar); left: var(--kenar); right: var(--kenar); }
+  h1 {
+    font-family: "Fraunces", serif; font-optical-sizing: auto; font-weight: 400;
+    font-size: 120px; line-height: 1; letter-spacing: -0.02em;
+  }
+  .alt-baslik { margin-top: 22px; font: 400 44px/1.2 "IBM Plex Sans", sans-serif; }
+
+  /* §4 Izgara: Kurşun ince çizgi, üç eşit hücre (60–380–700–1020); çizgiler ürünlerin arasındaki boşluğa düşer */
+  .izgara {
+    position: absolute; left: var(--kenar); right: var(--kenar);
+    top: var(--izgara-ust); height: calc(var(--izgara-alt) - var(--izgara-ust));
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    border-top: 1.5px solid var(--kursun);
+    border-bottom: 1.5px solid var(--kursun);
+  }
+  .hucre { padding: 16px 0 0 16px; }
+  .hucre + .hucre { border-left: 1.5px solid var(--kursun); }
+  .hucre:first-child { padding-left: 0; }
+  /* §5 Ürün numarası: ad ve ölçü Mono, Mürekkep (§2: fotoğraf üstündeki küçük yazı Mürekkep) */
+  .hucre p { font: 400 28px/1.3 "IBM Plex Mono", monospace; }
+
+  /* §5 Fiyat ve CTA */
+  .alt { position: absolute; left: var(--kenar); right: var(--kenar); bottom: var(--kenar); }
+  .fiyat { font: 400 44px/1.2 "IBM Plex Sans", sans-serif; }
+  .fiyat b { font-weight: 500; color: var(--muhur); }
+  .satir { margin-top: 14px; display: flex; justify-content: space-between; align-items: flex-end; }
+  .cta { background: var(--yulaf); font: 400 28px/1 "IBM Plex Mono", monospace; padding: 15px 20px; }
+  .imza { font: 400 44px/.8 "Fraunces", serif; letter-spacing: -0.01em; }
+</style>
+</head>
+<body>
+<div class="tuval">
+  <img src="2026-10-13-post-sonra-gorsel.png" alt="">
+
+  <div class="baslik">
+    <h1>Conscious<br>bugün açıldı.</h1>
+    <p class="alt-baslik">Üç ürün, bir rutin.</p>
+  </div>
+
+  <div class="izgara">
+    <div class="hucre"><p>01 · 150 ml<br>Temizleme Jeli</p></div>
+    <div class="hucre"><p>02 · 30 ml<br>Niasinamid Serumu</p></div>
+    <div class="hucre"><p>03 · 50 ml<br>Seramid Krem</p></div>
+  </div>
+
+  <div class="alt">
+    <p class="fiyat">Rutin Seti · lansman fiyatı <b>1.390 TL</b></p>
+    <div class="satir">
+      <p class="cta">Bio'daki bağlantıdan siteye git</p>
+      <p class="imza">conscious</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

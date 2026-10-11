@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>2026-10-15-story-3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;500&display=block" rel="stylesheet">
+<style>
+  /*
+    İçerik fabrikası · STORY şablonu · 1080×1920 (9:16)
+    DESIGN.md §8: yazı ve bağlantı çıkartması y = 250…1580; üstte 250 px, altta 340 px boş; yanlarda 60 px.
+    "cikartma" sınıfı: son karede bağlantı çıkartması için x 240–840, y 1380–1560 boş kalır (çıkartmayı Instagram ekler).
+    Aşama sınıfı (AIDA) görsel ağırlığı belirler.
+  */
+  :root {
+    --kagit: #FAF7F2; --yulaf: #EDE3D6; --murekkep: #1F1B17; --muhur: #2F4A3A; --kursun: #6B645B;
+    --kenar: 60px; --ust: 250px; --alt: 340px;
+  }
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--kagit); }
+  .tuval { position: relative; width: 1080px; height: 1920px; overflow: hidden; color: var(--murekkep); }
+  [data-yazi]:empty { display: none; }
+
+  .foto { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
+
+  .ust { position: absolute; top: calc(var(--ust) + 14px); left: var(--kenar); right: var(--kenar); }
+  .etiket {
+    display: flex; justify-content: space-between; gap: 24px;
+    font: 400 28px/1 "IBM Plex Mono", monospace;
+    padding-bottom: 16px; margin-bottom: 26px; border-bottom: 1.5px solid var(--kursun);
+  }
+  .etiket:has(> [data-yazi]:first-child:empty) { display: none; }
+  .adim { display: flex; align-items: flex-start; gap: 28px; }
+  .no { font: 400 132px/.82 "Fraunces", serif; font-optical-sizing: auto; letter-spacing: -0.02em; }
+  h1 { font-family: "Fraunces", serif; font-optical-sizing: auto; font-weight: 400; font-size: 56px; line-height: 1.08; letter-spacing: -0.005em; padding-top: 4px; }
+  .metin { margin-top: 12px; font: 400 34px/1.3 "IBM Plex Sans", sans-serif; }
+  .metin b { font-weight: 500; color: var(--muhur); white-space: nowrap; }
+  .terim { display: inline-block; margin-top: 26px; padding: 12px 16px 14px; background: var(--yulaf); }
+  .terim:has(.ad:empty) { display: none; }
+  .terim .ad { font: 400 28px/1.25 "IBM Plex Mono", monospace; }
+  .terim .tr { font: 400 34px/1.25 "IBM Plex Sans", sans-serif; }
+
+  .alt { position: absolute; left: var(--kenar); right: var(--kenar); bottom: calc(var(--alt) + 20px); }
+  .cta { display: inline-block; background: var(--yulaf); font: 400 28px/1 "IBM Plex Mono", monospace; padding: 15px 20px; }
+  .cikartma .alt { display: none; }
+
+  /* ---------- AIDA ağırlıkları ---------- */
+  .asama-dikkat h1 { font-size: 88px; line-height: 1.02; }
+  .asama-istek h1 { font-size: 48px; }
+  /* Eylem: yazı baskın; fiyat cümlesi iri, fotoğraf ortada küçük bir hücrede (çıkartma alanının üstünde) */
+  .asama-eylem .foto { inset: auto auto 560px var(--kenar); width: 460px; height: 460px; }
+  .asama-eylem .adim { display: block; }
+  .asama-eylem .no { display: none; }
+  .asama-eylem h1 { font-size: 104px; line-height: 1.02; letter-spacing: -0.015em; }
+  .asama-eylem .metin { font-size: 44px; }
+
+  /* ---------- Kontrol kopyası: #kontrol ---------- */
+  .kontrol { display: none; position: absolute; inset: 0; pointer-events: none; }
+  #kontrol:target { display: block; }
+  .kontrol .bant { position: absolute; left: 0; right: 0; background: rgba(255, 0, 0, .35); }
+  .kontrol .bant.u { top: 0; height: var(--ust); }
+  .kontrol .bant.a { bottom: 0; height: var(--alt); }
+  .kontrol .yan { position: absolute; top: var(--ust); bottom: var(--alt); width: var(--kenar); background: rgba(255, 0, 0, .15); }
+  .kontrol .yan.s { left: 0; } .kontrol .yan.g { right: 0; }
+  .kontrol .alan { display: none; position: absolute; left: 240px; right: 240px; top: 1380px; height: 180px;
+    border: 4px dashed #E00000; font: 500 26px/172px "IBM Plex Mono", monospace; color: #E00000; text-align: center; }
+  .cikartma .kontrol .alan { display: block; }
+</style>
+</head>
+<body>
+<div class="tuval cikartma asama-ilgi">
+  <img class="foto" src="../../sosyal/2026-10-15-story-3-gorsel.png" alt="">
+
+  <div class="ust">
+    <p class="etiket"><span data-yazi>Akşam rutini</span><span data-yazi>3/3</span></p>
+    <div class="adim">
+      <span class="no" data-yazi>03</span>
+      <div>
+        <h1 data-yazi>Bir pompa.</h1>
+        <p class="metin" data-yazi></p>
+      </div>
+    </div>
+    <div class="terim"><p class="ad" data-yazi>Ceramide NP, Ceramide AP, Ceramide EOP</p><p class="tr" data-yazi>Seramidler. Cildin dış katmanında da bulunan yağ molekülleri.</p></div>
+  </div>
+
+  <div class="alt"><p class="cta" data-yazi></p></div>
+
+  <div class="kontrol" id="kontrol">
+    <div class="bant u"></div><div class="bant a"></div><div class="yan s"></div><div class="yan g"></div>
+    <div class="alan">bağlantı çıkartması</div>
+  </div>
+</div>
+</body>
+</html>
