@@ -68,3 +68,9 @@ Image generation (Wiro) is done by Claude through MCP while following the skill;
 ## Open items
 
 Two questions are waiting for the (fictional) product and compliance owner: the full ingredient list and an approved answer to "my skin reddens easily, can I use it?". Until then the page shows a placeholder instead of an invented claim — see "Selin'e sorulacaklar" in [`degerlendirme.md`](degerlendirme.md).
+
+## License
+
+My own work in this repository — the design contract, decisions, audits, product page, content factory (skill, templates, `araclar/` scripts) and generated outputs — is licensed under the [Apache License 2.0](LICENSE).
+
+The course-provided brand kit (`marka-brief.md`, `gorsel-yon.md`, `lansman-haftasi.md`, `takvim.csv`, `urun-sayfasi-brief.md`, `marka-kiti.html`, `marka-kiti.pdf`, `OKUBENI.txt`) belongs to its authors and is included only as the input to this exercise; it is not covered by this license. Conscious is a fictional brand.
